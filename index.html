@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>What what</title>
+    </head>
+    <body>
+        <div class="main-display">
+            <div class="custom-navbar">
+                <h3 id="navbar-content">Main</h3>
+            </div>
+
+            <div class="page-holder">
+                <div class="page page-profile" id="profile-page">
+                    <div class="card card-profile">
+                        <div class="avatar">
+                            <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Bill_Gates_1977.png" class="card-img-top" alt="Аватарка профиля">
+                        </div>
+                        <div class="card-body" id="card-profile">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title" id="profile-name"></h5>
+                                <button class="btn btn-light" id="btn-redact-profile">
+                                    Ред.
+                                </button>
+                            </div>
+                            <p class="card-text" id="profile-description"></p>
+                        </div>
+                        <form id="profile-form" class="form-profile">
+                            <div class="form-group">
+                                <input type="text" name="name" autocomplete="off" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="description" autocomplete="off" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="btn-save-profile">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="page" id="contacts-page">
+                    <form id="contacts-search-form" class="form-inline">
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" name="search-query-contacts" class="form-control" placeholder="Найти...">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="contacts">
+                        <ul class="list-group list-group-flush" id="contacts-list">
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <div>
+                                    <small>7678687687</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Кнопка для добавления контактов -->
+                    <button class="btn-add" id="btn-open-contact-modal" data-toggle="modal" data-target="#modal-create-contact">
+                        <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                        </svg>
+                    </button>
+
+                    <div class="modal fade" id="modal-create-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact-header" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal-contact-header">Создать контакт</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="add-contact-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Имя друга" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="mobile" placeholder="Номер телефона" autocomplete="off">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Добавить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page page-tasks" id="list-page">
+                    
+                    <form id="tasks-search-form" class="form-inline">
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="date" name="search-query-tasks" class="form-control" placeholder="планируемая дата">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="tasks">
+                        <ul class="list-group list-group-flush" id="tasks-list">
+                            
+                        </ul>
+                    </div>
+                    <button type="button" class="btn-add-task" id="btn-modal-task-add" data-toggle="modal" data-target="#modal-create-task">Добавить задачу</button>
+
+                    <div class="modal fade" id="modal-create-task" tabindex="-1" role="dialog" aria-labelledby="modal-task-header" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal-task-header">Создать задачу</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="add-task-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="caption" placeholder="Описание " autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" class="form-control" name="date" placeholder="Палнируемая дата(гггг-мм-дд)" autocomplete="off">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" id="addTask">Добавить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+
+                </div>
+                <div class="page page-settigns" id="settings-page">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>
+                                    Очистить localstorage
+                                </p>
+                                <button class="btn btn-primary" id="btn-clear-store">
+                                    Очистить
+                                </button>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>
+                                    Тема
+                                </p>
+                                <div class="switch" id="switch-theme" data-checked="0">
+                                    <div class="switch-circle"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-menu d-flex justify-content-center">
+                <!-- Профиль, Контакты, Список дел, Настройки -->
+                <button class="btn-bottom" data-path="profile" data-pagename="Профиль">
+                    <img src="./img/icons/person-24px.svg" alt="Профиль">
+                    <small>Профиль</small>
+                </button>
+                <button class="btn-bottom" data-path="contacts" data-pagename="Контакты">
+                    <img src="./img/icons/people_alt-24px.svg" alt="Контакты">
+                    <small>Контакты</small>
+                </button>
+                <button class="btn-bottom" data-path="list" data-pagename="Список">
+                    <img src="./img/icons/list-24px.svg" alt="Список">
+                    <small>Список</small>
+                </button>
+                <button class="btn-bottom" data-path="settings" data-pagename="Настройки">
+                    <img src="./img/icons/settings-24px.svg" alt="Настройки">
+                    <small>Настройки</small>
+                </button>
+            </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/ListTask.js"></script>
+</html>
